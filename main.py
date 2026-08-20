@@ -21,9 +21,7 @@ if __name__ == '__main__':
         return server_response
 
     offset = -1
-    count = 0
-    while count < 100:
-        print(count)
+    while True:
         response = send_query('getUpdates', offset=offset)['result']
 
         for upd in response:
@@ -44,4 +42,3 @@ if __name__ == '__main__':
                 send_query(f'sendPhoto', **parameters)
 
         sleep(1)
-        count += 1
